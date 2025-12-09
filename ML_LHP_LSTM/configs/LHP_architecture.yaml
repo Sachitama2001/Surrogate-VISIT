@@ -1,0 +1,151 @@
+project:
+  name: lstm_static_conditioning_visit_lhp
+  objective: "VISIT(LHP)の入出力をLSTMで模倣し、日次のGPP/NPP/NEP/Rhを多ホライズン予測（同化時はNEPを主指標）"
+  horizon: 30
+  feedback_input: true
+  notes:
+    site: "LHP 熱帯林"
+    model: "VISIT"
+    experiment: "51パラメータ摂動×100サンプル（各サンプルが2010-2019の連続系列）"
+
+data:
+  time_zone: "UTC"           # 日の定義は厳密でなくてよい、実装はUTCで固定
+  freq: "1D"
+  period: ["2010-01-01", "2019-12-31"]
+  samples: 100               # 1サンプル=1回のモデル実行(2010-2019)
+  dynamic_features:
+    time:  {names: ["year","month","day","doy"], role: time_index}
+    meteorology:
+      names: ["tmp_2m","dswrf_sfc","prate_sfc","vpd","spfh_2m","wind_10m","air_prsr"]
+      notes: "LHP_ERA5等から読み込み済み"
+    co2:   {names: ["co2_ppm"], role: known_future}
+    state: {names: ["cmass","nmass","wmass"], role: observed_state}
+    flux:  {names: ["gpp","npp","nep","rh"], role: target}
+  static_features:
+    description: "摂動対象の連続パラメータ（51次元）を静的特徴として使用"
+    dim: 51
+    groups:
+      - Tree/Plant: 15
+      - C3: 15
+      - C4: 15
+      - Soil: 6
+  shapes:
+    X_dynamic: "batch x time x dyn_feat_dim"
+    X_static:  "batch x 51"
+  dataset_files:
+    runs_dir: "OUTPUT_PERTURBATION_LHP/"
+    sample_level_files: "LHP_YYYYMMDD_daily_*.txt"
+    parameter_table: "parameter_summary.csv"
+  known_future:
+    enabled: true
+    variables: ["tmp_2m","dswrf_sfc","prate_sfc","vpd","spfh_2m","wind_10m","air_prsr","co2_ppm"]
+
+preprocess:
+  scaling:
+    dynamic: "StandardScaler(per-series=false)"
+    static_continuous: "StandardScaler"
+  categorical_embedding: {}
+  transforms:
+    target:
+      log: false
+      difference: false
+  missing:
+    policy: "forward_fill_with_indicator"
+
+model:
+  architecture: "LSTM"
+  hidden_size: 256
+  num_layers: 2
+  dropout: 0.1
+  static_conditioning:
+    methods: ["init_state","concat_input"]
+    init_state:
+      mlp_dims: [128]       # s -> (h0,c0)
+    concat_input:
+      s_emb_dim: 64
+    film:
+      use: false
+  head:
+    type: "regression"
+    outputs:
+      - {name: "gpp", dim: 1}
+      - {name: "npp", dim: 1}
+      - {name: "nep", dim: 1}
+      - {name: "rh",  dim: 1}
+
+training:
+  loss:
+    type: "hybrid"
+    one_step: {name: "MSE", weight: 0.7}
+    rollout:  {name: "MSE", weight: 0.3, rollout_len: 30}
+  optimizer:
+    name: "AdamW"
+    lr: 2.0e-3
+    weight_decay: 1.0e-4
+  schedule:
+    name: "cosine_warmup"
+    warmup_steps: 500
+  teacher_forcing:
+    scheduled_sampling:
+      start_prob: 1.0
+      end_prob: 0.3
+      decay_steps: 20000
+  batching:
+    batch_size: 64
+    context_len: 180
+    prediction_len: 30
+    padding: "left"
+  regularization:
+    gradient_clip: 1.0
+    early_stopping: {metric: "val/Rollout_RMSE@30", patience: 10}
+  seed: 2025
+
+evaluation:
+  split:
+    method: "time_series"
+    train_range: ["2010-01-01","2017-12-31"]
+    val_range:   ["2018-01-01","2018-12-31"]
+    test_range:  ["2019-01-01","2019-12-31"]
+    group_leak_guard: "by_sample"   # サンプル(摂動個体)を跨がない
+  metrics:
+    primary: "NEP_RMSE"             # 同化の主対象をNEPに合わせて重視
+    others: ["MAE","RMSE","MAPE","Rollout_RMSE@30"]
+  baselines:
+    - "naive_last"
+    - "linear_arx"
+
+inference_api:
+  input_tensors:
+    dynamic:
+      shape: "batch x T x dyn_feat_dim"
+      dtype: "float32"
+      order: "B T F"
+      includes:
+        - meteorology: 7
+        - co2_ppm: 1
+        - state: 3
+        - optional_prev_targets: true
+    static:
+      shape: "batch x 51"
+      dtype: "float32"
+    known_future:
+      shape: "batch x H x 8"   # 気象7 + CO2
+      optional: true
+  output_tensors:
+    y_hat:
+      names: ["gpp","npp","nep","rh"]
+      shape: "batch x H x 4"
+      dtype: "float32"
+  normalization_artifacts:
+    - "scaler_dynamic.pkl"
+    - "scaler_static.pkl"
+  device: "cpu"   # or "cuda"
+  latency_budget_ms: 50
+
+artifacts:
+  save_dir: "./artifacts/visit_lhp_lstm/"
+  files: ["model.pt", "config.yaml", "scalers/", "training_log.json"]
+
+governance:
+  pii: false
+  license: "internal"

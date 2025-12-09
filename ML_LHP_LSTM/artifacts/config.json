@@ -1,0 +1,59 @@
+{
+  "data_dir": "/mnt/d/VISIT/honban/point/ex/OUTPUT_PERTURBATION_LHP_V2_LHS",
+  "batch_size": 64,
+  "context_len": 180,
+  "prediction_len": 30,
+  "num_workers": 4,
+  "dynamic_dim": 10,
+  "static_dim": 36,
+  "hidden_size": 256,
+  "num_layers": 2,
+  "dropout": 0.1,
+  "output_dim": 4,
+  "known_future_dim": 10,
+  "num_epochs": 50,
+  "optimizer": {
+    "lr": 0.002,
+    "weight_decay": 0.0001
+  },
+  "scheduler": {
+    "warmup_steps": 500
+  },
+  "teacher_forcing": {
+    "start_prob": 1.0,
+    "end_prob": 0.3,
+    "decay_steps": 20000
+  },
+  "loss": {
+    "one_step_weight": 0.7,
+    "rollout_weight": 0.3,
+    "rollout_len": 30
+  },
+  "gradient_clip": 1.0,
+  "save_dir": "/mnt/d/VISIT/honban/point/ex/ML_LHP_LSTM/artifacts",
+  "num_samples": 180,
+  "dynamic_features": [
+    "tmp_sfc",
+    "tmp_2m",
+    "tmp10_soil",
+    "tmp200_soil",
+    "dswrf_sfc",
+    "tcdc_clm",
+    "prate_sfc",
+    "spfh_2m",
+    "wind_10m",
+    "a_co2"
+  ],
+  "future_known_features": [
+    "tmp_sfc",
+    "tmp_2m",
+    "tmp10_soil",
+    "tmp200_soil",
+    "dswrf_sfc",
+    "tcdc_clm",
+    "prate_sfc",
+    "spfh_2m",
+    "wind_10m",
+    "a_co2"
+  ]
+}

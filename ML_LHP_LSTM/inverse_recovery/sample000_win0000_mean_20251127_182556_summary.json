@@ -1,0 +1,13 @@
+{
+  "sample_id": 0,
+  "window_index": 0,
+  "dataset_sample_idx": 0,
+  "prior_mode": "mean",
+  "prior_sample_id": null,
+  "unconstrained": false,
+  "mae": 4.341349046664359,
+  "rmse": 11.278419148883405,
+  "max_abs": 54.2328913043564,
+  "final_loss": 2.3434085960616358e-07,
+  "iterations": 6400
+}

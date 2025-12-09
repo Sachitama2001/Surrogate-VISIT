@@ -1,0 +1,23 @@
+======================================================================
+Parameter Inversion Test Results
+======================================================================
+
+Test Sample ID: 0
+Test Window: 100
+Prediction Length: 30 days
+
+--- NEP RMSE ---
+Prior:     0.010885
+Optimized: 0.010227
+Improvement: 6.05%
+
+--- Parameter Changes ---
+Mean absolute change: 0.160239
+Max absolute change:  1.096725
+Mean relative change: 94737127.20%
+Max relative change:  2088587731.12%
+
+--- Optimization ---
+Iterations: 300
+Final loss: 0.000099
+======================================================================

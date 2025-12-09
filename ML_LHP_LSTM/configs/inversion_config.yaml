@@ -1,0 +1,8 @@
+# Default inversion overrides for aggressive fitting experiments
+inversion:
+  lr: 0.3          # larger step size than built-in default (0.001)
+  max_iters: 1600     # allow more optimization steps
+  lambda_prior: 0.0  # disable prior regularization
+  clip_raw_params:
+    enabled: true    # enforce configured bounds
+  bounds_file: parameter_bounds.yaml

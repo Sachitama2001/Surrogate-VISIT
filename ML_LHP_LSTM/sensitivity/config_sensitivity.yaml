@@ -1,0 +1,57 @@
+# Base paths
+model:
+  checkpoint_path: "artifacts/checkpoint_best.pt"
+  # Optional: override path to training config used for model hyperparams
+  config_path: "artifacts/config.json"
+  device: "cuda"
+
+scalers:
+  static: "data/scaler_static.pkl"
+  dynamic: "data/scaler_dynamic.pkl"
+
+# Parameter space
+parameters:
+  range_csv: "configs/range_of_paras.csv"
+  include:
+    - tree_alloc_ass
+    - tree_alloc_abg
+    - tree_pmax
+    - tree_lue
+    - tree_topt
+    - tree_tmin
+    - tree_tmax
+    - c3_pmax
+    - c3_lue
+    - c3_topt
+    - c3_tmin
+    - c3_tmax
+
+# Quantity of interest
+qoi:
+  name: "mean_nep_30d"
+  options:
+    flux_index: 3  # 0:GPP,1:NPP,2:ER,3:NEP
+    start_day: 0
+    end_day: 29
+
+# Reference window selection
+window:
+  mode: "dataset"
+  sample_id: 0
+  window_index: 0
+  split: "test"
+
+# Sobol sampling
+sobol:
+  base_sample_size: 1024
+  calc_second_order: true
+  batch_size: 512
+
+# Output settings
+output:
+  base_dir: "sensitivity/results"
+  figures_dir: "sensitivity/figures"
+  tag: "LHP_sample0_window0_subset"
+
+# Reproducibility
+seed: 42

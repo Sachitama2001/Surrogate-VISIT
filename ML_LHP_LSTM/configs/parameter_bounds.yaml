@@ -1,0 +1,109 @@
+parameter_bounds:
+  tree_alloc_ass:
+    min: 0.01
+    max_from: tree_alloc_abg
+  tree_alloc_abg:
+    min: 0.1
+    max: 0.9
+  tree_sla:
+    min: 80.0
+    max: 270.0
+  tree_lue:
+    min: 0.02
+    max: 0.08
+  tree_pmax:
+    min: 8.0
+    max: 30.0
+  tree_topt:
+    min: 10.0
+    max: 35.0
+  tree_tmin:
+    min: -5.0
+    max: 20.0
+  tree_tmax:
+    min: 25.0
+    max: 50.0
+  tree_rmf0:
+    min: 0.01
+    max: 2.0
+  tree_qTf0:
+    min: 1.5
+    max: 2.5
+  tree_qTc0:
+    min: 1.5
+    max: 2.5
+  tree_qTr0:
+    min: 1.5
+    max: 2.5
+  tree_lf0:
+    min: 0.0
+    max: 0.1
+  tree_lc0:
+    min: 0.0
+    max: 0.1
+  tree_lr0:
+    min: 0.0
+    max: 0.1
+  c3_alloc_ass:
+    min: 0.01
+    max_from: c3_alloc_abg
+  c3_alloc_abg:
+    min: 0.1
+    max: 0.9
+  c3_sla:
+    min: 80.0
+    max: 270.0
+  c3_lue:
+    min: 0.02
+    max: 0.08
+  c3_pmax:
+    min: 8.0
+    max: 30.0
+  c3_topt:
+    min: 10.0
+    max: 35.0
+  c3_tmin:
+    min: -5.0
+    max: 20.0
+  c3_tmax:
+    min: 25.0
+    max: 50.0
+  c3_rmf0:
+    min: 0.01
+    max: 2.0
+  c3_qTf0:
+    min: 1.5
+    max: 2.5
+  c3_qTc0:
+    min: 1.5
+    max: 2.5
+  c3_qTr0:
+    min: 1.5
+    max: 2.5
+  c3_lf0:
+    min: 0.0
+    max: 0.1
+  c3_lc0:
+    min: 0.0
+    max: 0.1
+  c3_lr0:
+    min: 0.0
+    max: 0.1
+  soil_sr_lf:
+    min: 0.01
+    max: 3.0
+  soil_sr_lc:
+    min: 0.01
+    max: 3.0
+  soil_sr_lr:
+    min: 0.01
+    max: 3.0
+  soil_f_co2_lf:
+    min: 0.3
+    max: 0.9
+  soil_f_co2_lc:
+    min: 0.3
+    max: 0.9
+  soil_f_co2_lr:
+    min: 0.3
+    max: 0.9

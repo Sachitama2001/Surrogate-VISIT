@@ -1,0 +1,8 @@
+# Inversion settings matching window_000_bounds run
+inversion:
+  lr: 0.1
+  max_iters: 3200
+  lambda_prior: 0.0
+  clip_raw_params:
+    enabled: true
+  bounds_file: parameter_bounds.yaml

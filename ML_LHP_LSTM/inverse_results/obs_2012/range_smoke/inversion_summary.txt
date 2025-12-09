@@ -1,0 +1,24 @@
+======================================================================
+Parameter Inversion Test Results
+======================================================================
+
+Mode: observation
+Window label: obs_2012-01-01_to_2012-01-02
+Prediction Length: 30 days
+Valid observations: 31 / 60
+
+--- NEP RMSE ---
+Prior:     0.047875
+Optimized: 0.018942
+Improvement: 60.43%
+
+--- Parameter Changes ---
+Mean absolute change: 5.499427
+Max absolute change:  83.301872
+Mean relative change: 45.62%
+Max relative change:  164.69%
+
+--- Optimization ---
+Iterations: 800
+Final loss: 0.000286
+======================================================================
