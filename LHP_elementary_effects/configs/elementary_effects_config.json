@@ -1,0 +1,16 @@
+{
+  "parameter_file": "/mnt/d/VISIT/honban/point/ex/CODE_LHP/INPUT/parameter_LHP_backup.txt",
+  "range_csv": "/mnt/d/VISIT/honban/point/ex/LHP_parameter_perturbation_v2/docs/range_of_paras_v2.csv",
+  "metadata_csv": "../docs/parameter_metadata.csv",
+  "design_csv": "../configs/morris_design_lhp.csv",
+  "metrics": ["GPP", "NEP", "ER", "NPP"],
+  "staging_manifest": "../results/morris_samples/staging_manifest.json",
+  "runs_output_dir": "../results/morris_runs",
+  "summary_csv": "../results/morris_metrics_summary.csv",
+  "morris": {
+    "num_trajectories": 20,
+    "num_levels": 6,
+    "grid_jump": 3,
+    "seed": 20251207
+  }
+}
