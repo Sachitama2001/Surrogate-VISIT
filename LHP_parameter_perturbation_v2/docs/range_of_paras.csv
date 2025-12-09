@@ -1,0 +1,41 @@
+index_and_name, range_min, range_max
+3: "tree_alloc_ass", 0.01, tree_alloc_abg
+4: "tree_alloc_abg", 0.1, 0.9
+13: "tree_pmax", 8.0, 30.0
+26: "tree_rmf0", 0.01, 2.0
+31: "tree_qTf0", 1.5, 2.5
+32: "tree_qTc0", 1.5, 2.5
+33: "tree_qTr0", 1.5, 2.5
+12: "tree_lue", 0.02, 0.08
+10: "tree_sla", 80, 270
+14: "tree_topt", 10, 35
+15: "tree_tmin",-5, 20
+16: "tree_tmax", 25, 50
+37: "tree_lf0", 0, 0.1
+38: "tree_lc0", 0, 0.1
+39: "tree_lr0", 0, 0.1
+# C3 (CSV行41-79 → 実ファイル行44-82)
+44: "c3_alloc_ass", 0.01, c3_alloc_abg
+45: "c3_alloc_abg", 0.1, 0.9
+53: "c3_pmax", 8.0, 30.0
+66: "c3_rmf0", 0.01, 2.0
+71: "c3_qTf0", 1.5, 2.5
+72: "c3_qTc0", 1.5, 2.5
+73: "c3_qTr0", 1.5, 2.5
+52: "c3_lue", 0.02, 0.08
+50: "c3_sla", 80, 270
+54: "c3_topt", 10, 35
+55: "c3_tmin",-5, 20
+56: "c3_tmax", 25, 50
+77: "c3_lf0", 0, 0.1
+78: "c3_lc0", 0, 0.1
+79: "c3_lr0", 0, 0.1
+# C4 (CSV行81-119 → 実ファイル行84-122)
+C4は動かさない
+# Soil (CSV行121-137 → 実ファイル行124-140)
+124: "soil_sr_lf", 0.01, 3.0
+125: "soil_sr_lc", 0.01, 3.0
+126: "soil_sr_lr", 0.01, 3.0
+134: "soil_f_co2_lf", 0.3, 0.9
+135: "soil_f_co2_lc", 0.3, 0.9
+136: "soil_f_co2_lr", 0.3, 0.9

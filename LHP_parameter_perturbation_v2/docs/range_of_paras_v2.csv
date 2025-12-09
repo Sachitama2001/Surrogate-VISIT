@@ -1,0 +1,181 @@
+index_and_name,range_min,range_max,comment,struct_field,unit,notes,status
+3: tree_albedo,0.05,0.3,plant albedo,albedo,fraction,樹冠短波反射率,
+4: tree_alloc_ass,0.01,tree_alloc_abg,leaf allocation coefficient,alloc_ass,fraction,EPP>0 で葉優先配分,
+5: tree_alloc_abg,0.1,0.9,aboveground allocation coefficient,alloc_abg,fraction,葉以外を幹/根へ比率配分,
+6: tree_phenoltype,1,1,phenology type,phenoltype,category,常緑/落葉,固定する
+7: tree_ctmp_lfdsp,0,7,critical temperature for leaf display,ctmp_lfdsp,℃,展葉トリガー温度,
+8: tree_ctmp_lfshd,5,20,critical temperature for leaf shedding,ctmp_lfshd,℃,落葉トリガー温度,
+9: tree_phototype,3,3,photosynthesis type,phototype,category,C3/C4/CAM 選択,固定する
+10: tree_sla,50,300,specific leaf area,sla,cm2 g-1,葉炭素→LAI 換算,
+11: tree_ek0,0.1,0.9,light attenuation coefficient,ek0,scaler,キャノピー光減衰,
+12: tree_lue,0.02,0.08,light use efficiency,lue,mol CO2 mol photon-1,量子収率初期値,
+13: tree_pmax,5.0,30.0,maximum photosynthetic rate,pmax,μmol CO2 m-2 s-1,光飽和同化速度,
+14: tree_topt,10,30,optimum temperature,topt,℃,温度応答ピーク,
+15: tree_tmin,-5,9.999,minimum temperature,tmin,℃,温度応答下限,
+16: tree_tmax,30,48,maximum temperature,tmax,℃,温度応答上限,
+17: tree_gs_b0,1,70,stomatal conductance b0,gs_b0,mmol H2O m-2 s-1,最小気孔コンダクタンス,
+18: tree_gs_b1,3000,20000,stomatal conductance b1,gs_b1,mmol H2O m-2 s-1,同化量への感度,
+19: tree_gs_b2,4,50,stomatal conductance b2,gs_b2,hPa,VPD 感度,
+20: tree_km_nstl,0.1,0.6,soil moisture dependence,km_nstl,scaler,非気孔制限の水分係数 GMD saito2014から情報取れる,
+21: tree_kmci,30,450,CO2 dependence,kmci,ppmv,CO2 半飽和濃度,
+22: tree_cmpcd0,20,90,CO2 compensation point,cmpcd0,ppmv,CO2 補償点基準,
+23: tree_rgf,0.1,0.5,leaf growth respiration coefficient,rgf,gC gC-1,葉成長呼吸係数,
+24: tree_rgc,0.1,0.5,stem growth respiration coefficient,rgc,gC gC-1,幹成長呼吸係数,
+25: tree_rgr,0.1,0.5,root growth respiration coefficient,rgr,gC gC-1,根成長呼吸係数,
+26: tree_rmf0,0.05,2.0,leaf maintenance respiration coefficient,rmf0,mgC gC-1 day-1,葉維持呼吸係数,
+27: tree_rmc_s,0.005,0.5,sapwood maintenance respiration coefficient,rmc_s,mgC gC-1 day-1,サップ材維持呼吸,
+28: tree_rmr_s,0.005,0.05,fine root maintenance respiration coefficient,rmr_s,mgC gC-1 day-1,細根維持呼吸,
+29: tree_rmc_h,0.05,2.0,heartwood maintenance respiration coefficient,rmc_h,mgC gC-1 day-1,心材維持呼吸,
+30: tree_rmr_h,0.005,0.5,coarse root maintenance respiration coefficient,rmr_h,mgC gC-1 day-1,太根維持呼吸,
+31: tree_qtf0,1.0,3.0,Q10 leaf respiration,qtf0,scaler,葉維持呼吸 Q10,
+32: tree_qtc0,1.0,3.0,Q10 stem respiration,qtc0,scaler,幹維持呼吸 Q10,
+33: tree_qtr0,1.0,3.0,Q10 root respiration,qtr0,scaler,根維持呼吸 Q10,
+34: tree_f_sz_s,5,300,stem size-dependence coefficient,f_sz_s,Mg C,幹サイズ効果,
+35: tree_f_sz_r,1,80,root size-dependence coefficient,f_sz_r,Mg C,根サイズ効果,
+36: tree_lf0,0,0.005,leaf turnover,lf0,day-1,葉リター率,
+37: tree_lc0,0,0.005,stem turnover,lc0,day-1,幹リター率,
+38: tree_lr0,0,0.005,root turnover,lr0,day-1,根リター率,
+39: tree_dcd,0.01,0.2,seasonal deciduous rate,dcd,day-1,季節落葉係数,
+40: tree_root_spt_a,3.0,10.0,root distribution parameter a,root_spt_a,scaler,浅根重み,
+41: tree_root_spt_b,0.5,5.0,root distribution parameter b,root_spt_b,scaler,深根重み,
+43: c3_albedo,0.05,0.3,plant albedo,albedo,fraction,樹冠短波反射率,
+44: c3_alloc_ass,0.01,c3_alloc_abg,leaf allocation coefficient,alloc_ass,fraction,EPP>0 で葉優先配分,
+45: c3_alloc_abg,0.1,0.9,aboveground allocation coefficient,alloc_abg,fraction,葉以外を幹/根へ比率配分,
+46: c3_phenoltype,1,1,phenology type,phenoltype,category,落葉/常緑,固定する
+47: c3_ctmp_lfdsp,0,7,critical temperature for leaf display,ctmp_lfdsp,℃,展葉トリガー温度,
+48: c3_ctmp_lfshd,5,20,critical temperature for leaf shedding,ctmp_lfshd,℃,落葉トリガー温度,
+49: c3_phototype,3,3,photosynthesis type,phototype,category,C3/C4/CAM,固定する
+50: c3_sla,30,350,specific leaf area,sla,cm2 g-1,葉炭素→LAI 換算,
+51: c3_ek0,50,300,light attenuation coefficient,ek0,scaler,キャノピー光減衰,
+52: c3_lue,0.02,0.08,light use efficiency,lue,mol CO2 mol photon-1,量子収率初期値,
+53: c3_pmax,8.0,30.0,maximum photosynthetic rate,pmax,μmol CO2 m-2 s-1,光飽和同化速度,
+54: c3_topt,10,35,optimum temperature,topt,℃,温度応答ピーク,
+55: c3_tmin,-5,20,minimum temperature,tmin,℃,温度応答下限,
+56: c3_tmax,25,50,maximum temperature,tmax,℃,温度応答上限,
+57: c3_gs_b0,1,70,stomatal conductance b0,gs_b0,mmol H2O m-2 s-1,最小気孔コンダクタンス,
+58: c3_gs_b1,3000,20000,stomatal conductance b1,gs_b1,mmol H2O m-2 s-1,同化量への感度,
+59: c3_gs_b2,4,50,stomatal conductance b2,gs_b2,hPa,VPD 感度,
+60: c3_km_nstl,0.1,0.6,soil moisture dependence,km_nstl,scaler,非気孔制限の水分係数,
+61: c3_kmci,30,450,CO2 dependence,kmci,ppmv,CO2 半飽和濃度,
+62: c3_cmpcd0,20,90,CO2 compensation point,cmpcd0,ppmv,CO2 補償点基準,
+63: c3_rgf,0.1,0.5,leaf growth respiration coefficient,rgf,gC gC-1,葉成長呼吸係数,
+64: c3_rgc,0.1,0.5,stem growth respiration coefficient,rgc,gC gC-1,幹成長呼吸係数,
+65: c3_rgr,0.1,0.5,root growth respiration coefficient,rgr,gC gC-1,根成長呼吸係数,
+66: c3_rmf0,0.01,2.0,leaf maintenance respiration coefficient,rmf0,mgC gC-1 day-1,葉維持呼吸係数,
+67: c3_rmc_s,0.005,0.5,sapwood maintenance respiration coefficient,rmc_s,mgC gC-1 day-1,サップ材維持呼吸,
+68: c3_rmr_s,0.005,0.05,fine root maintenance respiration coefficient,rmr_s,mgC gC-1 day-1,細根維持呼吸,
+69: c3_rmc_h,0.05,2.0,heartwood maintenance respiration coefficient,rmc_h,mgC gC-1 day-1,心材維持呼吸,
+70: c3_rmr_h,0.005,0.5,coarse root maintenance respiration coefficient,rmr_h,mgC gC-1 day-1,太根維持呼吸,
+71: c3_qtf0,1.0,3.0,Q10 leaf respiration,qtf0,scaler,葉維持呼吸 Q10,
+72: c3_qtc0,1.0,3.0,Q10 stem respiration,qtc0,scaler,幹維持呼吸 Q10,
+73: c3_qtr0,1.0,3.0,Q10 root respiration,qtr0,scaler,根維持呼吸 Q10,
+74: c3_f_sz_s,5,300,stem size-dependence coefficient,f_sz_s,Mg C,幹サイズ効果,
+75: c3_f_sz_r,1,80,root size-dependence coefficient,f_sz_r,Mg C,根サイズ効果,
+76: c3_lf0,0,0.005,leaf turnover,lf0,day-1,葉リター率,
+77: c3_lc0,0,0.005,stem turnover,lc0,day-1,幹リター率,
+78: c3_lr0,0,0.005,root turnover,lr0,day-1,根リター率,
+79: c3_dcd,0,0,seasonal deciduous rate,dcd,day-1,季節落葉係数,
+80: c3_root_spt_a,3.0,10.0,root distribution parameter a,root_spt_a,scaler,浅根重み,
+81: c3_root_spt_b,0.5,5.0,root distribution parameter b,root_spt_b,scaler,深根重み,
+83: c4_albedo,,,plant albedo,albedo,fraction,樹冠短波反射率,固定する
+84: c4_alloc_ass,,,leaf allocation coefficient,alloc_ass,fraction,EPP>0 で葉優先配分,固定する
+85: c4_alloc_abg,,,aboveground allocation coefficient,alloc_abg,fraction,葉以外を幹/根へ比率配分,固定する
+86: c4_phenoltype,,,phenology type,phenoltype,category,落葉/常緑の分岐,固定する
+87: c4_ctmp_lfdsp,,,critical temperature for leaf display,ctmp_lfdsp,℃,展葉トリガー温度,固定する
+88: c4_ctmp_lfshd,,,critical temperature for leaf shedding,ctmp_lfshd,℃,落葉トリガー温度,固定する
+89: c4_phototype,,,photosynthesis type,phototype,category,C3/C4/CAM 選択,固定する
+90: c4_sla,,,specific leaf area,sla,cm2 g-1,葉炭素→LAI 換算,固定する
+91: c4_ek0,,,light attenuation coefficient,ek0,scaler,キャノピー光減衰,固定する
+92: c4_lue,,,light use efficiency,lue,mol CO2 mol photon-1,量子収率初期値,固定する
+93: c4_pmax,,,maximum photosynthetic rate,pmax,μmol CO2 m-2 s-1,光飽和同化速度,固定する
+94: c4_topt,,,optimum temperature,topt,℃,温度応答ピーク,固定する
+95: c4_tmin,,,minimum temperature,tmin,℃,温度応答下限,固定する
+96: c4_tmax,,,maximum temperature,tmax,℃,温度応答上限,固定する
+97: c4_gs_b0,,,stomatal conductance b0,gs_b0,mmol H2O m-2 s-1,最小気孔コンダクタンス,固定する
+98: c4_gs_b1,,,stomatal conductance b1,gs_b1,mmol H2O m-2 s-1,同化量への感度,固定する
+99: c4_gs_b2,,,stomatal conductance b2,gs_b2,hPa,VPD 感度,固定する
+100: c4_km_nstl,,,soil moisture dependence,km_nstl,scaler,非気孔制限の水分係数,固定する
+101: c4_kmci,5,200,CO2 dependence,kmci,ppmv,CO2 半飽和濃度,固定する
+102: c4_cmpcd0,0.1,15,CO2 compensation point,cmpcd0,ppmv,CO2 補償点基準,固定する
+103: c4_rgf,,,leaf growth respiration coefficient,rgf,gC gC-1,葉成長呼吸係数,固定する
+104: c4_rgc,,,stem growth respiration coefficient,rgc,gC gC-1,幹成長呼吸係数,固定する
+105: c4_rgr,,,root growth respiration coefficient,rgr,gC gC-1,根成長呼吸係数,固定する
+106: c4_rmf0,,,leaf maintenance respiration coefficient,rmf0,mgC gC-1 day-1,葉維持呼吸係数,固定する
+107: c4_rmc_s,,,sapwood maintenance respiration coefficient,rmc_s,mgC gC-1 day-1,サップ材維持呼吸,固定する
+108: c4_rmr_s,,,fine root maintenance respiration coefficient,rmr_s,mgC gC-1 day-1,細根維持呼吸,固定する
+109: c4_rmc_h,,,heartwood maintenance respiration coefficient,rmc_h,mgC gC-1 day-1,心材維持呼吸,固定する
+110: c4_rmr_h,,,coarse root maintenance respiration coefficient,rmr_h,mgC gC-1 day-1,太根維持呼吸,固定する
+111: c4_qtf0,,,Q10 leaf respiration,qtf0,scaler,葉維持呼吸 Q10,固定する
+112: c4_qtc0,,,Q10 stem respiration,qtc0,scaler,幹維持呼吸 Q10,固定する
+113: c4_qtr0,,,Q10 root respiration,qtr0,scaler,根維持呼吸 Q10,固定する
+114: c4_f_sz_s,,,stem size-dependence coefficient,f_sz_s,Mg C,幹サイズ効果,固定する
+115: c4_f_sz_r,,,root size-dependence coefficient,f_sz_r,Mg C,根サイズ効果,固定する
+116: c4_lf0,,,leaf turnover,lf0,day-1,葉リター率,固定する
+117: c4_lc0,,,stem turnover,lc0,day-1,幹リター率,固定する
+118: c4_lr0,,,root turnover,lr0,day-1,根リター率,固定する
+119: c4_dcd,0,0,seasonal deciduous rate,dcd,day-1,季節落葉係数,固定する
+120: c4_root_spt_a,,,root distribution parameter a,root_spt_a,scaler,浅根重み,固定する
+121: c4_root_spt_b,,,root distribution parameter b,root_spt_b,scaler,深根重み,固定する
+123: soil_albedo0,0.05,0.45,soil albedo,albedo0,fraction,土壌反射率,
+124: soil_sr_lf,0.3,10.0,"decomposition, leaf litter",sr_lf,‰ day-1,葉リター分解速度,
+125: soil_sr_lc,0.3,10.0,"decomposition, stem litter",sr_lc,‰ day-1,幹リター分解速度,
+126: soil_sr_lr,0.3,10.0,"decomposition, root litter",sr_lr,‰ day-1,根リター分解速度,
+127: soil_sr_ha,0.2,4.0,"decomposition, active humus",sr_ha,‰ day-1,活性腐植分解,
+128: soil_sr_hi,0.02,0.4,"decomposition, intermediate humus",sr_hi,‰ day-1,中間腐植分解,
+129: soil_sr_hp,0.001,0.05,"decomposition, passive humus",sr_hp,‰ day-1,受動腐植分解,
+130: soil_kml,0.05,0.9,"moisture dependence, litter",kml,scaler,リターの水分スカラー,
+131: soil_kmh,0.05,0.9,"moisture dependence, humus",kmh,scaler,腐植の水分スカラー,
+132: soil_kmsl,0.05,0.9,"anaerobic dependence, litter",kmsl,scaler,リター嫌気制限,
+133: soil_kmsh,0.05,0.9,"anaerobic dependence, humus",kmsh,scaler,腐植嫌気制限,
+134: soil_f_co2_lf,0.3,0.9,"CO2 emission coefficient, leaf",f_co2_lf,fraction,葉リターのCO2分配,
+135: soil_f_co2_lc,0.3,0.9,"CO2 emission coefficient, stem",f_co2_lc,fraction,幹リターのCO2分配,
+136: soil_f_co2_lr,0.3,0.9,"CO2 emission coefficient, root",f_co2_lr,fraction,根リターのCO2分配,
+137: soil_f_hm_a,0.3,0.8,active humus portion,f_hm_a,fraction,活性腐植配分,
+138: soil_f_hm_i,0.2,soil_f_hm_a,intermediate humus portion,f_hm_i,fraction,中間腐植配分 (<=a),
+139: soil_f_hm_p,0,1,passive humus portion,f_hm_p,fraction,遅速腐植配分 (1-a-iで決定),
+141: over_ke_d,0.3,0.9,diffuse PAR attenuation,ke_d,scaler,拡散光減衰係数,
+142: over_ke_n,0.3,0.9,nitrogen attenuation,ke_n,fraction,葉N減衰係数,
+143: over_scttr,0.05,0.35,scattering coefficient,scttr,fraction,散乱係数,
+144: over_spect,0.05,0.30,spectral adjustment,spect,fraction,PSII 吸収補正,
+145: over_rfl_d,0.01,0.20,diffuse reflectance,rfl_d,fraction,拡散光反射,
+146: over_photocap_n0,0.3,1.3,nitrogen-photosynthetic capacity,photocap_n0,(Vcmax)/N,葉N→Vcmax換算係数,
+147: over_nc_ct,30,250,canopy-top leaf nitrogen,nc_ct,mmol N m-2,キャノピー頂部葉N,
+148: over_nc_np,20,over_nc_ct,non-photosynthetic leaf nitrogen,nc_np,mmol N m-2,非光合成葉N,
+149: over_acen_et,30000,80000,"activation energy, electron transport",acen_et,J mol-1,電子伝達 Arrhenius,
+150: over_hc_et,150000,250000,"high-temp curvature, electron transport",hc_et,J mol-1,高温抑制項,
+151: over_str_et,600,800,temperature response shift,str_et,scaler,温度シフト,
+152: over_kc0,25,70,Michaelis coefficient (CO2),kc0,Pa,Rubisco CO2 Km,
+153: over_ko0,20000,35000,Michaelis coefficient (O2),ko0,Pa,Rubisco O2 Km,
+154: over_acen_kc,50000,80000,activation energy for kc,acen_kc,J mol-1,kc 活性化エネルギー,
+155: over_acen_ko,30000,40000,activation energy for ko,acen_ko,J mol-1,ko 活性化エネルギー,
+156: over_acen_vc,60000,80000,activation energy for carboxylation,acen_vc,J mol-1,Vcmax 活性化エネルギー,
+157: over_acen_rd,66400,66400,activation energy for dark respiration,acen_rd,J mol-1,暗呼吸 活性化エネルギー,固定する
+158: over_cv_j,0.45,0.9,convexity for electron transport,cv_j,scaler,電子伝達凸性,
+159: over_cv_p,0.6,0.9,convexity for photosynthesis,cv_p,scaler,同化凸性,
+160: over_jvr,1.3,2.7,Jmax/Vcmax ratio,jvr,scaler,Jmax/Vcmax 比,
+161: over_gss_b0,1,10,stomatal conductance parameter b0,gss_b0,mmol H2O m-2 s-1,Sun/Shade 最小気孔,
+162: over_gss_b1,1000,10000,stomatal conductance parameter b1,gss_b1,mmol H2O m-2 s-1,Sun/Shade 感度,
+163: over_gss_b2,1,8,stomatal conductance parameter b2,gss_b2,kPa,Sun/Shade VPD 感度,
+165: under_ke_d,,,diffuse PAR attenuation,ke_d,scaler,拡散光減衰係数,overstoryと同じ
+166: under_ke_n,,,nitrogen attenuation,ke_n,scaler,葉N減衰係数,overstoryと同じ
+167: under_scttr,,,scattering coefficient,scttr,scaler,散乱係数,overstoryと同じ
+168: under_spect,,,spectral adjustment,spect,scaler,PSII 吸収補正,overstoryと同じ
+169: under_rfl_d,,,diffuse reflectance,rfl_d,scaler,拡散光反射,overstoryと同じ
+170: under_photocap_n0,,,nitrogen-photosynthetic capacity,photocap_n0,(Vcmax)/N,葉N→Vcmax換算係数,overstoryと同じ
+171: under_nc_ct,30,250,canopy-top leaf nitrogen,nc_ct,mmol N m-2,キャノピー頂部葉N,
+172: under_nc_np,20,over_nc_ct,non-photosynthetic leaf nitrogen,nc_np,mmol N m-2,非光合成葉N,
+173: under_acen_et,,,"activation energy, electron transport",acen_et,J mol-1,電子伝達 Arrhenius,overstoryと同じ
+174: under_hc_et,,,"high-temp curvature, electron transport",hc_et,J mol-1,高温抑制項,overstoryと同じ
+175: under_str_et,,,temperature response shift,str_et,scaler,温度シフト,overstoryと同じ
+176: under_kc0,,,Michaelis coefficient (CO2),kc0,Pa,Rubisco CO2 Km,overstoryと同じ
+177: under_ko0,,,Michaelis coefficient (O2),ko0,Pa,Rubisco O2 Km,overstoryと同じ
+178: under_acen_kc,,,activation energy for kc,acen_kc,J mol-1,kc 活性化エネルギー,overstoryと同じ
+179: under_acen_ko,,,activation energy for ko,acen_ko,J mol-1,ko 活性化エネルギー,overstoryと同じ
+180: under_acen_vc,,,activation energy for carboxylation,acen_vc,J mol-1,Vcmax 活性化エネルギー,overstoryと同じ
+181: under_acen_rd,,,activation energy for dark respiration,acen_rd,J mol-1,暗呼吸 活性化エネルギー,固定する
+182: under_cv_j,,,convexity for electron transport,cv_j,scaler,電子伝達凸性,overstoryと同じ
+183: under_cv_p,,,convexity for photosynthesis,cv_p,scaler,同化凸性,overstoryと同じ
+184: under_jvr,,,Jmax/Vcmax ratio,jvr,scaler,Jmax/Vcmax 比,overstoryと同じ
+185: under_gss_b0,1,10,stomatal conductance parameter b0,gss_b0,mmol H2O m-2 s-1,Sun/Shade 最小気孔,
+186: under_gss_b1,1000,10000,stomatal conductance parameter b1,gss_b1,mmol H2O m-2 s-1,Sun/Shade 感度,
+187: under_gss_b2,1,8,stomatal conductance parameter b2,gss_b2,kPa,Sun/Shade VPD 感度,

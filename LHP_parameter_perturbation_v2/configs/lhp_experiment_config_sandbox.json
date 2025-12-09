@@ -1,0 +1,28 @@
+{
+  "_comment": "Sandbox config for small-sample validation runs with v2 parameter ranges.",
+  "paths": {
+    "base_dir": null
+  },
+  "experiment": {
+    "site": "LHP",
+    "years": "2010-2019",
+    "n_samples": 600,
+    "std_ratio": 0.05,
+    "start_idx": 1000,
+    "compile_once": true,
+    "disable_c4": true,
+    "sampling": {
+      "method": "lhs",
+      "seed": 20251207,
+      "range_file": "docs/range_of_paras_v2.csv"
+    }
+  },
+  "output": {
+    "directory": "OUTPUT_PERTURBATION_LHP_V2_LHS600",
+    "artifacts": [
+      "parameter_log.json",
+      "parameter_summary.csv",
+      "experiment_results.csv"
+    ]
+  }
+}

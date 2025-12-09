@@ -1,0 +1,12 @@
+動的変数として VISIT に出力させる列は以下の 9 項目に統一し、これらをサロゲートの説明変数として利用する。
+（aCO2 は別列として常に出力／説明変数に含める）
+
+extern double tmp_sfc_d[HCLIMD][366];		/* ground surface temperature, degree Celcius */
+extern double tmp_2m_d[HCLIMD][366];		/* 2m air temperature, degree Celcius */
+extern double tmp10_soil_d[HCLIMD][366];	/* soil temperature at 10 cm depth, degree Celcius */
+extern double tmp200_soil_d[HCLIMD][366];	/* soil temperature at 200 cm depth, degree Celcius */
+extern double dswrf_sfc_d[HCLIMD][366];		/* downward shortwave radiation at the surface, W m-2 */
+extern double tcdc_clm_d[HCLIMD][366];		/* total cloudiness, fraction */
+extern double prate_sfc_d[HCLIMD][366];		/* precipitation, mm day-1 */
+extern double spfh_2m_d[HCLIMD][366];		/* specific humidity, kg kg-1 */
+extern double wind_10m_d[HCLIMD][366];		/* wind velocity, m s-1 */

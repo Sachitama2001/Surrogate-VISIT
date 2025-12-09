@@ -1,0 +1,28 @@
+{
+  "_comment": "VISIT LHP v2 perturbation defaults. Output path is separated from v1 to keep both datasets side-by-side.",
+  "paths": {
+    "base_dir": null
+  },
+  "experiment": {
+    "site": "LHP",
+    "years": "2010-2019",
+    "n_samples": 180,
+    "std_ratio": 0.1,
+    "start_idx": 0,
+    "compile_once": true,
+    "disable_c4": true,
+    "sampling": {
+      "method": "lhs",
+      "seed": 20251122,
+      "range_file": "docs/range_of_paras.csv"
+    }
+  },
+  "output": {
+    "directory": "OUTPUT_PERTURBATION_LHP_V2",
+    "artifacts": [
+      "parameter_log.json",
+      "parameter_summary.csv",
+      "experiment_results.csv"
+    ]
+  }
+}
